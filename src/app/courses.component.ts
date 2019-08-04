@@ -1,45 +1,14 @@
-import {Component} from '@angular/core';
-import { CourseService } from 'courses.service';
+import { Component } from '@angular/core';
+import { CoursesService } from './courses.service';
+
 @Component({
-    selector:'courses',
-    template:`<h2>{{title|summary}}</h2>
-<ul>
-<li *ngFor="let course of courses">
-{{course}}
-</li>
-</ul><br/>
-{{course.title|uppercase}}<br/>
-{{course.price|number:'2.1-1'}}<br/>
-{{course.releaseDate|date:shortdate}}<br/>
-
-<button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive?'blue':'red'">save</button>
-<input [(ngModel)]="email"  (keyup.enter)="onKeyUp()"/>
-    `}) 
-export class CourseComponent{
-    isActive=false;
-email="me@example.com";
-    title="list of courses";
-    getTitle(){
-        return this.title;
-    }
-
-course={
-    title:"Abc",
-    price:1.95,
-    releaseDate:new Date(2016,5,1)
-}
-
-    courses;
-onKeyUp(){
-    console.log(this.email);
-}
-//     onKeyUp($event){
-// // if($event.keyCode===13)
-// console.log($event.target.value);
-
-    
-    constructor(){
-        let service=new CourseService();
-        this.courses=service.getCourses();
-    }
+  selector: 'app-courses', // courses
+  template: `
+    {{ text | summary:10 }}
+  `
+})
+export class CoursesComponent {
+  text = `
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, corporis quod culpa voluptate, illum enim iure itaque unde at reprehenderit porro ullam nesciunt. Minima officia voluptatibus facere voluptates architecto distinctio quasi, ad excepturi aliquam nemo corporis, ullam tenetur quidem, autem unde expedita sunt sed culpa! In quisquam explicabo voluptates, autem nulla iure voluptatibus voluptate accusantium provident laboriosam, alias iste nisi quos nemo fuga quaerat delectus debitis cum dolores? Quisquam dignissimos animi soluta minus accusantium nemo ad officia quae mollitia totam adipisci necessitatibus alias nisi deleniti repudiandae nam reiciendis sequi corporis molestiae, at doloremque porro! Illo exercitationem vitae perspiciatis voluptatem sint a? Consequuntur, nobis laudantium fugiat voluptatem quae pariatur dolore blanditiis autem distinctio inventore laborum in a, magnam unde? A corrupti laudantium est incidunt quia beatae. Nisi consectetur, itaque ipsa tempora, nesciunt esse porro, exercitationem quibusdam deleniti laboriosam reprehenderit doloremque repudiandae quisquam? Optio excepturi distinctio cupiditate aliquid harum accusamus doloremque vitae eum eligendi, aperiam reiciendis totam facere in consectetur porro officiis illum! Porro provident asperiores iste consequatur deserunt, fuga maiores dolore quos voluptate ut ducimus ratione atque cupiditate saepe qui sint quibusdam eligendi architecto vel dolorum excepturi vero! Nobis corrupti accusamus id aperiam asperiores obcaecati earum maiores dolorum rem cumque! Possimus, consectetur totam unde perferendis repellat quibusdam mollitia laudantium id ipsam doloremque officia architecto voluptates magnam dolores sunt porro illo pariatur qui, sapiente explicabo nemo et. Pariatur, asperiores accusamus deserunt officiis commodi quibusdam quidem, maiores corrupti placeat aut maxime. Consectetur sunt asperiores ex unde temporibus veritatis, eaque similique vero laudantium quidem nostrum vel facere fuga sequi explicabo consequuntur aut, beatae quibusdam saepe, quisquam inventore? Amet blanditiis pariatur sint est saepe vitae accusantium eum, deserunt recusandae iusto nobis, ducimus quasi omnis nesciunt non praesentium commodi, at eaque dolor rerum beatae. Totam mollitia dolore, maxime tempore quidem quam veniam ad. Blanditiis praesentium a nobis, dolore assumenda alias voluptas consectetur, soluta non, ea eveniet est natus ullam error. Aperiam, quos? Incidunt aperiam, dolores unde laboriosam cupiditate, animi commodi pariatur numquam, id deserunt et. Animi, accusamus quisquam vel nemo libero a adipisci assumenda, et voluptas, nesciunt quae suscipit magnam? Reiciendis, ipsa tenetur facilis sequi architecto vel! Fugit obcaecati quae reiciendis, in repudiandae omnis? Neque nesciunt, ex cupiditate tenetur cum, quisquam omnis voluptates deleniti nihil velit blanditiis autem! Excepturi eligendi labore autem consequatur fuga cupiditate quod minus quos nostrum aperiam amet fugit quidem nihil iure voluptatem numquam sequi eveniet provident impedit, obcaecati hic quia dolorum harum! Voluptas illum nobis blanditiis aliquid hic non distinctio. Vitae ex atque necessitatibus, amet eveniet laboriosam nihil unde ipsum, nam hic explicabo quibusdam rerum incidunt beatae id perferendis tempore! Corrupti hic dolores quidem quibusdam. Facere quaerat iure, fugiat vel voluptatibus animi debitis neque est vitae doloribus, mollitia quasi. Nisi eius aperiam ipsum sunt placeat modi quis blanditiis voluptate possimus enim deserunt impedit explicabo ducimus esse eligendi sapiente libero quaerat obcaecati, sint quibusdam repellendus? Exercitationem ipsa aliquid, quam cumque, sit voluptatibus cupiditate provident in officiis soluta, dolores culpa impedit cum expedita? Hic exercitationem iure corporis quam quidem fugit sit ab ipsam dolore.
+  `;
 }

@@ -1,0 +1,11 @@
+<div class="zippy">
+  <div class="zippy-header"
+    [class.expanded]="isExpanded"
+    (click)="toggle()">
+    {{ title }}
+    <fa-icon [icon]="['fas', (isExpanded ? 'caret-up' : 'caret-down')]"></fa-icon>
+  </div>
+  <div class="zippy-body" [hidden]="!isExpanded">
+    <ng-content></ng-content>
+  </div>
+</div>

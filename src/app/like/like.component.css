@@ -1,0 +1,8 @@
+.ng-fa-icon {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.ng-fa-icon.is-liked {
+  color: deeppink;
+}
