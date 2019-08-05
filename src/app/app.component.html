@@ -32,13 +32,13 @@
 <!-- <div *ngIf="courses.length === 0">
   No courses yet
 </div> -->
-<div *ngIf="coursesIf.length > 0; then coursesList else noCourses"></div>
+<!-- <div *ngIf="coursesIf.length > 0; then coursesList else noCourses"></div>
 <ng-template #coursesList>
   List of courses
 </ng-template>
 <ng-template #noCourses>
   No courses yet
-</ng-template>
+</ng-template> -->
 
 <div [hidden]="coursesIf.length === 0">
   List of courses
@@ -88,3 +88,5 @@
 <app-zippy title="Billing Details">
   Billing Details Content
 </app-zippy>
+ 
+<contact-form></contact-form>
